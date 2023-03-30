@@ -3,6 +3,8 @@
 
 This code allows exploiting a writing to a parent process sharing the same tty from a child. This is especially interesting when the child process is executing a less privileged user we control and the parent process is root.
 
+The attack is described in this blog article: https://www.errno.fr/TTYPushback.html. The difference here, is that instead of backdooring a user, we directly attach to an already existing session.
+
 This Proof Of Concept is not the cleanest one but has the advantage to work properly. It should be noted that if the targeted process is being actively used, the exploit may crash it.
 
 ## Usage
